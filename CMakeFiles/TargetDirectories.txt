@@ -1,0 +1,5 @@
+/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles/main.dir
+/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles/tests.dir
+/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles/test.dir
+/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles/edit_cache.dir
+/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles/rebuild_cache.dir

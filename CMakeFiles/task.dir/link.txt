@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/task.dir/main.cpp.o CMakeFiles/task.dir/onlyFunc.cpp.o -o task 

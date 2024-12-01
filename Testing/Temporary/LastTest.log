@@ -1,0 +1,95 @@
+Start testing: Dec 01 18:57 +03
+----------------------------------------------------------
+1/1 Testing: MyTests
+1/1 Test: MyTests
+Command: "/home/denis/Documents/453503/ОАиП/LR6/tests"
+Directory: /home/denis/Documents/453503/ОАиП/LR6
+"MyTests" start time: Dec 01 18:57 +03
+Output:
+----------------------------------------------------------
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 31 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 10 tests from AnalyzeVowelsAndConsonants
+[ RUN      ] AnalyzeVowelsAndConsonants.EmptyString
+[       OK ] AnalyzeVowelsAndConsonants.EmptyString (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.NoLetters
+[       OK ] AnalyzeVowelsAndConsonants.NoLetters (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.AllVowels
+[       OK ] AnalyzeVowelsAndConsonants.AllVowels (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.AllConsonants
+[       OK ] AnalyzeVowelsAndConsonants.AllConsonants (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.EqualVowelsAndConsonants
+[       OK ] AnalyzeVowelsAndConsonants.EqualVowelsAndConsonants (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.MixedWithSpaces
+[       OK ] AnalyzeVowelsAndConsonants.MixedWithSpaces (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.MixedWithDigitsAndSymbols
+[       OK ] AnalyzeVowelsAndConsonants.MixedWithDigitsAndSymbols (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.UppercaseLetters
+[       OK ] AnalyzeVowelsAndConsonants.UppercaseLetters (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.SingleVowel
+[       OK ] AnalyzeVowelsAndConsonants.SingleVowel (0 ms)
+[ RUN      ] AnalyzeVowelsAndConsonants.SingleConsonant
+[       OK ] AnalyzeVowelsAndConsonants.SingleConsonant (0 ms)
+[----------] 10 tests from AnalyzeVowelsAndConsonants (0 ms total)
+
+[----------] 10 tests from parseAndSortNumbers
+[ RUN      ] parseAndSortNumbers.EmptyString
+[       OK ] parseAndSortNumbers.EmptyString (0 ms)
+[ RUN      ] parseAndSortNumbers.NoNumbers
+[       OK ] parseAndSortNumbers.NoNumbers (0 ms)
+[ RUN      ] parseAndSortNumbers.oneNumber
+[       OK ] parseAndSortNumbers.oneNumber (0 ms)
+[ RUN      ] parseAndSortNumbers.AllinOrder
+[       OK ] parseAndSortNumbers.AllinOrder (0 ms)
+[ RUN      ] parseAndSortNumbers.lettersAndNumbers
+[       OK ] parseAndSortNumbers.lettersAndNumbers (0 ms)
+[ RUN      ] parseAndSortNumbers.negative
+[       OK ] parseAndSortNumbers.negative (0 ms)
+[ RUN      ] parseAndSortNumbers.bigNumbers
+[       OK ] parseAndSortNumbers.bigNumbers (0 ms)
+[ RUN      ] parseAndSortNumbers.yayzhexzchepridumat
+[       OK ] parseAndSortNumbers.yayzhexzchepridumat (0 ms)
+[ RUN      ] parseAndSortNumbers.yaustaldumat
+[       OK ] parseAndSortNumbers.yaustaldumat (0 ms)
+[ RUN      ] parseAndSortNumbers.pobeda10
+[       OK ] parseAndSortNumbers.pobeda10 (0 ms)
+[----------] 10 tests from parseAndSortNumbers (0 ms total)
+
+[----------] 11 tests from isSymetric
+[ RUN      ] isSymetric.EmptyString
+[       OK ] isSymetric.EmptyString (0 ms)
+[ RUN      ] isSymetric.hello
+[       OK ] isSymetric.hello (0 ms)
+[ RUN      ] isSymetric.GanusevichMaksimVasilyevich
+[       OK ] isSymetric.GanusevichMaksimVasilyevich (0 ms)
+[ RUN      ] isSymetric.aboba
+[       OK ] isSymetric.aboba (0 ms)
+[ RUN      ] isSymetric.kek
+[       OK ] isSymetric.kek (0 ms)
+[ RUN      ] isSymetric.chiloviparen12
+[       OK ] isSymetric.chiloviparen12 (0 ms)
+[ RUN      ] isSymetric.228nagibatorirotabigan822
+[       OK ] isSymetric.228nagibatorirotabigan822 (0 ms)
+[ RUN      ] isSymetric.a
+[       OK ] isSymetric.a (0 ms)
+[ RUN      ] isSymetric.postavte10
+[       OK ] isSymetric.postavte10 (0 ms)
+[ RUN      ] isSymetric.nupzh
+[       OK ] isSymetric.nupzh (0 ms)
+[ RUN      ] isSymetric.10001
+[       OK ] isSymetric.10001 (0 ms)
+[----------] 11 tests from isSymetric (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 31 tests from 3 test suites ran. (1 ms total)
+[  PASSED  ] 31 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"MyTests" end time: Dec 01 18:57 +03
+"MyTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 01 18:57 +03

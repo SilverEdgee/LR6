@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/denis/Documents/453503/ОАиП/LR6/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/main.dir/main.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/main.cpp",
+  "file": "/home/denis/Documents/453503/ОАиП/LR6/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+},
+{
+  "directory": "/home/denis/Documents/453503/ОАиП/LR6/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/main.dir/onlyFunc.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp",
+  "file": "/home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp",
+  "output": "CMakeFiles/main.dir/onlyFunc.cpp.o"
+},
+{
+  "directory": "/home/denis/Documents/453503/ОАиП/LR6/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tests.dir/googletest.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/googletest.cpp",
+  "file": "/home/denis/Documents/453503/ОАиП/LR6/googletest.cpp",
+  "output": "CMakeFiles/tests.dir/googletest.cpp.o"
+},
+{
+  "directory": "/home/denis/Documents/453503/ОАиП/LR6/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/tests.dir/onlyFunc.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp",
+  "file": "/home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp",
+  "output": "CMakeFiles/tests.dir/onlyFunc.cpp.o"
+}
+]
