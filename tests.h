@@ -12,3 +12,4 @@ void menu(short number);
 void showTaskConditions();
 void runGoogleTests();
 void runMainProgram();
+char* read_line(int* length);

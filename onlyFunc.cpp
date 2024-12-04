@@ -3,10 +3,9 @@
 
 void runMainProgram() {
     const int MAX_SIZE = 80;
-    char* str = new char[MAX_SIZE + 1];
     int length;
-
-    inputString(str, length, MAX_SIZE);
+    char *str = NULL;
+    str = read_line(&length);
 
     while (true) {
         std::cout << "\nChoose an option:\n";
@@ -223,5 +222,40 @@ void runGoogleTests() {
     // Выполнение тестов
     std::cout << "Запуск Google тестов...\n";
     system("./tests");
+}
+
+char* read_line(int* length) {
+    char *buffer = NULL;
+    int size = 0;
+    int capacity = 16;
+
+    buffer = (char*) malloc(capacity);
+    if (!buffer) {
+        fprintf(stderr, "Ошибка выделения памяти\n");
+        return NULL;
+    }
+
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+        if (size + 1 >= capacity) {
+            capacity *= 2;
+            char *new_buffer = (char*) realloc(buffer, capacity);
+            if (!new_buffer) {
+                fprintf(stderr, "Ошибка перераспределения памяти\n");
+                free(buffer);
+                return NULL;
+            }
+            buffer = new_buffer;
+        }
+        buffer[size++] = (char)c;
+    }
+
+    if (buffer) {
+        buffer[size] = '\0';
+    }
+    if (length) {
+        *length = size; // Возвращаем длину через указатель
+    }
+    return buffer;
 }
 

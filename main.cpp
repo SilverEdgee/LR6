@@ -28,6 +28,7 @@ int main() {
                 runMainProgram();
                 break;
             default:
+            
                 std::cout << "Неверный выбор. Попробуйте снова.\n";
                 break;
         }
