@@ -13,3 +13,6 @@ void showTaskConditions();
 void runGoogleTests();
 void runMainProgram();
 char* read_line(int* length);
+char** readStrings(int* count);
+bool isStringSymmetric(const char* str, int length);
+void isSymmetricall(char** str, int* count);

@@ -5,8 +5,8 @@ void runMainProgram() {
     const int MAX_SIZE = 80;
     int length;
     char *str = NULL;
-    str = read_line(&length);
-
+    char **strArray = NULL;
+    int count = 0;
     while (true) {
         std::cout << "\nChoose an option:\n";
         std::cout << "1. Analyze vowels and consonants\n";
@@ -21,13 +21,24 @@ void runMainProgram() {
 
         switch (choice) {
             case 1:
+                if(!str) {
+                    std::cout << "Введите строку для анализа: ";
+                    str = read_line(&length);
+                }
                 analyzeVowelsAndConsonants(str, length);
                 break;
             case 2:
+                if(!str) {
+                    std::cout << "Введите строку для анализа: ";
+                    str = read_line(&length);
+                }            
                 parseAndSortNumbers(str, length);
                 break;
             case 3:
-                isSymmetric(str, length);
+                if (!str) {
+                    strArray = readStrings(&count);
+                }
+                isSymmetricall(strArray, &count);
                 break;
             case 4:
                 std::cout << "Exiting program." << std::endl;
@@ -74,16 +85,6 @@ bool isVowel(char c) {
     return false;
 }
 
-void inputString(char* str, int& length, const int MAX_SIZE) {
-    char c;
-    length = 0;
-    std::cout << "Enter a string: ";
-    while ((c = getchar()) != '\n' && length < MAX_SIZE) {
-        str[length++] = c;
-    }
-    str[length] = '\0';
-}
-
 void printresult(int vowelCount, int consonantCount) {
         std::cout << "Number of vowels = " << vowelCount << std::endl;
         std::cout << "Number of consonant = " << consonantCount << std::endl;
@@ -120,33 +121,39 @@ void parseAndSortNumbers(const char* str, int length) {
     int currentNumber = 0;
     bool isNumber = false;
     int sign = 1;
-for (int i = 0; i < length; i++) {
-    if (str[i] == '-' && i + 1 < length && isDigitChar(str[i + 1])) {
-        sign = -1;
-    } else if (isDigitChar(str[i])) {
-        currentNumber = currentNumber * 10 + (str[i] - '0');
-        isNumber = true;
-    } else if (isNumber) {
-        numbers[count++] = currentNumber * sign;
-        currentNumber = 0;
-        isNumber = false;
-        sign = 1;
-    }
-}
+    bool invalidCharacterFound = false;
 
-if (isNumber) {
-    numbers[count++] = currentNumber * sign;
-}
-
-    if (count > 0) {
-        insertionSort(numbers, count);
-        std::cout << "Sorted numbers: ";
-        for (int i = 0; i < count; i++) {
-            std::cout << numbers[i] << ' ';
+    for (int i = 0; i < length; i++) {
+        if (str[i] == '-' && i + 1 < length && isDigitChar(str[i + 1])) {
+            sign = -1;
+        } else if (isDigitChar(str[i])) {
+            currentNumber = currentNumber * 10 + (str[i] - '0');
+            isNumber = true;
+        } else if (isNumber) {
+            numbers[count++] = currentNumber * sign;
+            currentNumber = 0;
+            isNumber = false;
+            sign = 1;
+        } else if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n') {
+            invalidCharacterFound = true;
         }
-        std::cout << std::endl;
+    }
+    if (isNumber) {
+        numbers[count++] = currentNumber * sign;
+    }
+    if (invalidCharacterFound) {
+        std::cout << "Введите именно числа." << std::endl;
     } else {
-        std::cout << "No numbers found in the string." << std::endl;
+        if (count > 0) {
+            insertionSort(numbers, count);
+            std::cout << "Sorted numbers: ";
+            for (int i = 0; i < count; i++) {
+                std::cout << numbers[i] << ' ';
+            }
+            std::cout << std::endl;
+        } else {
+            std::cout << "No numbers found in the string." << std::endl;
+        }
     }
 
     delete[] numbers;
@@ -170,7 +177,6 @@ void isSymmetric(const char* str, int length) {
     else
         std::cout << "Not symmetric" << std::endl;
 }
-// Функция для отображения условий задач
 void menu(short number) {
     std::cout << "Laba " << number << " made by Denis Pometko \n";
     for (int i = 0; i < 20; i++) {
@@ -179,7 +185,6 @@ void menu(short number) {
     std::cout << "\n";
 }
 
-// Функция для выбора и отображения условия задачи
 void showTaskConditions() {
     std::cout << "Выберите задачу для отображения условия:\n";
     std::cout << "1. Отсортировать числа в строке.\n";
@@ -210,16 +215,13 @@ void showTaskConditions() {
             break;
     }
 
-    // Разделитель после отображения условия
     for (int i = 0; i < 20; i++) {
         std::cout << "-";
     }
     std::cout << "\n";
 }
 
-// Функция для запуска тестов
 void runGoogleTests() {
-    // Выполнение тестов
     std::cout << "Запуск Google тестов...\n";
     system("./tests");
 }
@@ -254,8 +256,48 @@ char* read_line(int* length) {
         buffer[size] = '\0';
     }
     if (length) {
-        *length = size; // Возвращаем длину через указатель
+        *length = size; 
     }
     return buffer;
 }
 
+bool isStringSymmetric(const char* str) {
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    int left = 0, right = length - 1;
+    while (left < right) {
+        if (str[left] != str[right]) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
+
+
+char** readStrings(int* count) {
+    std::cout << "Введите число строк: ";
+    std::cin >> *count;
+    std::cin.ignore();
+
+    char** strings = new char*[*count];
+    for (int i = 0; i < *count; i++) {
+        std::cout << "Введите строку " << i + 1 << ": ";
+
+        int length = 0;
+        strings[i] = read_line(&length);
+    }
+    return strings;
+}
+
+void isSymmetricall(char** str, int* count) {
+    for(int i = 0; i < *count; i++) {
+        if (isStringSymmetric(str[i])) {
+            std::cout << "Строка " << str[i] << " симметрична" << std::endl;
+        }
+        else std::cout << "Строка " << str[i] << " не симметрична" << std::endl;
+    }
+}

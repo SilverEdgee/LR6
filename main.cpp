@@ -13,7 +13,6 @@ int main() {
         int choice;
         std::cin >> choice;
         std::cin.ignore();
-
         switch (choice) {
             case 1:
                 showTaskConditions();
