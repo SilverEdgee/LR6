@@ -73,7 +73,7 @@ CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/main.cpp
+	$(CMAKE_COMMAND) -E __run_co_compile --cpplint=cpplint --source=/home/denis/Documents/453503/ОАиП/LR6/main.cpp -- /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
@@ -87,7 +87,7 @@ CMakeFiles/main.dir/onlyFunc.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/onlyFunc.cpp.o: onlyFunc.cpp
 CMakeFiles/main.dir/onlyFunc.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/onlyFunc.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/onlyFunc.cpp.o -MF CMakeFiles/main.dir/onlyFunc.cpp.o.d -o CMakeFiles/main.dir/onlyFunc.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp
+	$(CMAKE_COMMAND) -E __run_co_compile --cpplint=cpplint --source=/home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp -- /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/onlyFunc.cpp.o -MF CMakeFiles/main.dir/onlyFunc.cpp.o.d -o CMakeFiles/main.dir/onlyFunc.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp
 
 CMakeFiles/main.dir/onlyFunc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/onlyFunc.cpp.i"

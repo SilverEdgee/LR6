@@ -21,21 +21,21 @@ void runMainProgram() {
 
         switch (choice) {
             case 1:
-                if(!str) {
-                    std::cout << "Введите строку для анализа: ";
+                if (!str) {
+                    std::cout << "Enter a string for analysis: ";
                     str = read_line(&length);
                 }
                 analyzeVowelsAndConsonants(str, length);
                 break;
             case 2:
-                if(!str) {
-                    std::cout << "Введите строку для анализа: ";
+                if (!str) {
+                    std::cout << "Enter a string for analysis: ";
                     str = read_line(&length);
-                }            
+                }
                 parseAndSortNumbers(str, length);
                 break;
             case 3:
-                if (!str) {
+                if (!strArray) {
                     strArray = readStrings(&count);
                 }
                 isSymmetricall(strArray, &count);
@@ -43,9 +43,13 @@ void runMainProgram() {
             case 4:
                 std::cout << "Exiting program." << std::endl;
                 delete[] str;
-                return;
-            default:
-                std::cout << "Invalid choice. Try again." << std::endl;
+                if (strArray) {
+                for (int i = 0; i < count; i++) {
+                    free(strArray[i]);
+                    }
+                free(strArray);
+                }
+            return;
         }
     }
 }
@@ -66,7 +70,6 @@ void insertionSort(int* array, int arrayLength) {
         while (j >= 0 && array[j] > array[j + 1]) {
             swap(array[j], array[j + 1]);
             j--;
-
         }
     }
 }
@@ -87,7 +90,7 @@ bool isVowel(char c) {
 
 void printresult(int vowelCount, int consonantCount) {
         std::cout << "Number of vowels = " << vowelCount << std::endl;
-        std::cout << "Number of consonant = " << consonantCount << std::endl;
+        std::cout << "Number of consonants = " << consonantCount << std::endl;
     if (vowelCount > consonantCount) {
         std::cout << "More vowels" << std::endl;
     } else if (vowelCount < consonantCount) {
@@ -100,18 +103,23 @@ void printresult(int vowelCount, int consonantCount) {
 void analyzeVowelsAndConsonants(const char* str, int length) {
     int vowelCount = 0;
     int letterCount = 0;
-
+    bool isnorm = true;
     for (int i = 0; i < length; ++i) {
         if (std::isalpha(str[i])) {
             ++letterCount;
             if (isVowel(str[i])) {
                 ++vowelCount;
             }
+        } else if (str[i] != '\n' && str[i] != '\t' && str[i] != ' ') {
+            isnorm = false;
         }
     }
-
+    if (!isnorm) {
+        std::cout  << "Type the word correctly" << std::endl;
+    } else {
     int consonantCount = letterCount - vowelCount;
     printresult(vowelCount, consonantCount);
+    }
 }
 
 
@@ -142,7 +150,7 @@ void parseAndSortNumbers(const char* str, int length) {
         numbers[count++] = currentNumber * sign;
     }
     if (invalidCharacterFound) {
-        std::cout << "Введите именно числа." << std::endl;
+        std::cout << "Please enter numbers only." << std::endl;
     } else {
         if (count > 0) {
             insertionSort(numbers, count);
@@ -178,7 +186,7 @@ void isSymmetric(const char* str, int length) {
         std::cout << "Not symmetric" << std::endl;
 }
 void menu(short number) {
-    std::cout << "Laba " << number << " made by Denis Pometko \n";
+    std::cout << "Lab " << number << " made by Denis Pometko \n";
     for (int i = 0; i < 20; i++) {
         std::cout << "x";
     }
@@ -186,11 +194,11 @@ void menu(short number) {
 }
 
 void showTaskConditions() {
-    std::cout << "Выберите задачу для отображения условия:\n";
-    std::cout << "1. Отсортировать числа в строке.\n";
-    std::cout << "2. Проанализировать гласные и согласные.\n";
-    std::cout << "3. Проверить симметричность строк.\n";
-    std::cout << "Ваш выбор: ";
+    std::cout << "Choose a task to display the conditions:\n";
+    std::cout << "1. Sort numbers in a string.\n";
+    std::cout << "2. Analyze vowels and consonants.\n";
+    std::cout << "3. Check string symmetry.\n";
+    std::cout << "Your choice: ";
 
     int choice;
     std::cin >> choice;
@@ -198,20 +206,21 @@ void showTaskConditions() {
 
     switch (choice) {
         case 1:
-            std::cout << "Условие задачи 1:\n";
-            std::cout << "Дана строка цифр, разделенных пробелами. Необходимо вывести на экран числа этой строки в порядке возрастания их значений.\n";
+            std::cout << "Task 1 condition:\n";
+            std::cout << "Given a string of numbers separated by spaces."
+            << "You need to print the numbers in ascending order.\n";
             break;
         case 2:
-            std::cout << "Условие задачи 2:\n";
-            std::cout << "Необходимо найти, каких букв в тексте больше – гласных или согласных.\n";
+            std::cout << "Task 2 condition:\n";
+            std::cout << "Determine whether there are more vowels or consonants in the text.\n";
             break;
         case 3:
-            std::cout << "Условие задачи 3:\n";
-            std::cout << "Введите массив строк. Для каждой строки необходимо проверить, является ли она симметричной.\n";
-            std::cout << "Симметричной считается строка, которая одинаково читается слева направо и справа налево.\n";
+            std::cout << "Task 3 condition:\n";
+            std::cout << "Enter an array of strings. For each string, check if it is symmetric.\n";
+            std::cout << "A string is symmetric if it reads the same left-to-right and right-to-left.\n";
             break;
         default:
-            std::cout << "Неверный выбор. Пожалуйста, выберите одну из задач (1, 2 или 3).\n";
+            std::cout << "Invalid choice. Please choose one of the tasks (1, 2, or 3).\n";
             break;
     }
 
@@ -222,7 +231,7 @@ void showTaskConditions() {
 }
 
 void runGoogleTests() {
-    std::cout << "Запуск Google тестов...\n";
+    std::cout << "Running Google tests...\n";
     system("./tests");
 }
 
@@ -231,9 +240,9 @@ char* read_line(int* length) {
     int size = 0;
     int capacity = 16;
 
-    buffer = (char*) malloc(capacity);
+    buffer = (char*) (malloc(capacity));
     if (!buffer) {
-        fprintf(stderr, "Ошибка выделения памяти\n");
+        fprintf(stderr, "Memory allocation error\n");
         return NULL;
     }
 
@@ -243,20 +252,20 @@ char* read_line(int* length) {
             capacity *= 2;
             char *new_buffer = (char*) realloc(buffer, capacity);
             if (!new_buffer) {
-                fprintf(stderr, "Ошибка перераспределения памяти\n");
+                fprintf(stderr, "Memory reallocation error\n");
                 free(buffer);
                 return NULL;
             }
             buffer = new_buffer;
         }
-        buffer[size++] = (char)c;
+        buffer[size++] = static_cast<char>(c);
     }
 
     if (buffer) {
         buffer[size] = '\0';
     }
     if (length) {
-        *length = size; 
+        *length = size;
     }
     return buffer;
 }
@@ -279,13 +288,13 @@ bool isStringSymmetric(const char* str) {
 
 
 char** readStrings(int* count) {
-    std::cout << "Введите число строк: ";
+    std::cout << "Enter the number of strings: ";
     std::cin >> *count;
     std::cin.ignore();
 
     char** strings = new char*[*count];
     for (int i = 0; i < *count; i++) {
-        std::cout << "Введите строку " << i + 1 << ": ";
+        std::cout << "Enter string " << i + 1 << ": ";
 
         int length = 0;
         strings[i] = read_line(&length);
@@ -294,10 +303,11 @@ char** readStrings(int* count) {
 }
 
 void isSymmetricall(char** str, int* count) {
-    for(int i = 0; i < *count; i++) {
+    for (int i = 0; i < *count; i++) {
         if (isStringSymmetric(str[i])) {
-            std::cout << "Строка " << str[i] << " симметрична" << std::endl;
+            std::cout << "String " << str[i] << " is symmetric" << std::endl;
+        } else {
+            std::cout << "String " << str[i] << " is not symmetric" << std::endl;
         }
-        else std::cout << "Строка " << str[i] << " не симметрична" << std::endl;
     }
 }

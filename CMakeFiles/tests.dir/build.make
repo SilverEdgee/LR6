@@ -73,7 +73,7 @@ CMakeFiles/tests.dir/googletest.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/googletest.cpp.o: googletest.cpp
 CMakeFiles/tests.dir/googletest.cpp.o: CMakeFiles/tests.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/googletest.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/googletest.cpp.o -MF CMakeFiles/tests.dir/googletest.cpp.o.d -o CMakeFiles/tests.dir/googletest.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/googletest.cpp
+	$(CMAKE_COMMAND) -E __run_co_compile --cpplint=cpplint --source=/home/denis/Documents/453503/ОАиП/LR6/googletest.cpp -- /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/googletest.cpp.o -MF CMakeFiles/tests.dir/googletest.cpp.o.d -o CMakeFiles/tests.dir/googletest.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/googletest.cpp
 
 CMakeFiles/tests.dir/googletest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/googletest.cpp.i"
@@ -87,7 +87,7 @@ CMakeFiles/tests.dir/onlyFunc.cpp.o: CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/onlyFunc.cpp.o: onlyFunc.cpp
 CMakeFiles/tests.dir/onlyFunc.cpp.o: CMakeFiles/tests.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/denis/Documents/453503/ОАиП/LR6/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tests.dir/onlyFunc.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/onlyFunc.cpp.o -MF CMakeFiles/tests.dir/onlyFunc.cpp.o.d -o CMakeFiles/tests.dir/onlyFunc.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp
+	$(CMAKE_COMMAND) -E __run_co_compile --cpplint=cpplint --source=/home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp -- /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/onlyFunc.cpp.o -MF CMakeFiles/tests.dir/onlyFunc.cpp.o.d -o CMakeFiles/tests.dir/onlyFunc.cpp.o -c /home/denis/Documents/453503/ОАиП/LR6/onlyFunc.cpp
 
 CMakeFiles/tests.dir/onlyFunc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/onlyFunc.cpp.i"

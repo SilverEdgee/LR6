@@ -2,13 +2,12 @@
 #include "tests.h"
 int main() {
     while (true) {
-        // Главное меню
-        std::cout << "Главное меню:\n";
-        std::cout << "1. Показать условия задач\n";
-        std::cout << "2. Показать и запустить Google тесты\n";
-        std::cout << "3. Запустить выполнение программы (решения задач)\n";
-        std::cout << "4. Выйти\n";
-        std::cout << "Ваш выбор: ";
+        std::cout << "Main Menu:\n";
+        std::cout << "1. Show task conditions\n";
+        std::cout << "2. Show and run Google tests\n";
+        std::cout << "3. Run program (task solutions)\n";
+        std::cout << "4. Exit\n";
+        std::cout << "Your choice: ";
 
         int choice;
         std::cin >> choice;
@@ -21,14 +20,13 @@ int main() {
                 runGoogleTests();
                 break;
             case 4:
-                std::cout << "Выход из программы.\n";
+                std::cout << "Exiting the program.\n";
                 return 0;
             case 3:
                 runMainProgram();
                 break;
             default:
-            
-                std::cout << "Неверный выбор. Попробуйте снова.\n";
+                std::cout << "Invalid choice. Try again.\n";
                 break;
         }
     }

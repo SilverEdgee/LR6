@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(MyProject)
+#set(CMAKE_CXX_CPPLINT "cpplint")
 
 
 set(CMAKE_CXX_STANDARD 17)
@@ -28,6 +29,10 @@ if (USE_TSAN)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=thread -fno-omit-frame-pointer -g")
     set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=thread")
 endif()
+
+#find_program(CLANG_TIDY "clang-tidy")
+#set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY}")
+
 
 
 
